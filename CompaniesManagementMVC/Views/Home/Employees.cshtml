@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Employees";
+    @model CompaniesManagementMVC.ViewModels.Employees
+}
+
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+@Html.ActionLink( "Add Employee", "AddEmployee", "Home", new { companyId = Model.CompanyId }, null)
+
+<div class="container">
+
+    @for(var i = 0; i < Model.Items.Count; i++)
+    {
+    <div class="esh-catalog-items row">
+        @Html.ActionLink( "Edit", "EditEmployee", "Home", new { Model.Items[i].Id }, null)
+        @Html.ActionLink( "Delete", "DeleteEmployee", "Home", new { id = Model.Items[i].Id, companyId = Model.Items[i].CompanyId }, null)
+        <div class="esh-catalog-item col-md-4">
+            @Model.Items[i].Name
+        </div>
+    </div>
+    }
+
+</div>
+
+<p>Use this area to provide additional information.</p>

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Companies";
+    @model CompaniesManagementMVC.ViewModels.Company
+}
+
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<h2>@Model.Name</h2>
+
+<form asp-action="SaveCompany" asp-controller="Home">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" placeholder="Your name goes here" />
+    <input asp-for="Id" type="hidden"/>
+    <input type="submit" />
+</form>
+
+<p>Use this area to provide additional information.</p>
