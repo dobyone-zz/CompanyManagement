@@ -14,7 +14,7 @@
     <input asp-for="CompanyId" type="hidden" />
     <br />
     <label asp-for="ExperienceLevel"></label>
-    <input asp-for="ExperienceLevel" placeholder="Your name goes here" />
+    <select asp-for="ExperienceLevel" asp-items="@new SelectList(new string [] { 'A'.ToString(), 'B'.ToString(), 'C'.ToString(), 'D'.ToString() })"></select>
     <br />
     <label asp-for="StartingDate"></label>
     <input asp-for="StartingDate" type="date" />
