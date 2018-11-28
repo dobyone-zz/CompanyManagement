@@ -1,10 +1,9 @@
 ﻿@{
-    ViewData["Title"] = "Companies";
+    ViewData["Title"] = "Edit employee";
     @model CompaniesManagementMVC.ViewModels.Employee
 }
 
 <h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
 <h2>@Model.Name</h2>
 
@@ -14,19 +13,22 @@
     <input asp-for="Name" placeholder="Your name goes here" />
     <input asp-for="CompanyId" type="hidden" />
     <br />
-    <label asp-for="ExperienceLevel"></label>
+    <br />
+    <label>Experience level</label>
     <select asp-for="ExperienceLevel" asp-items="@new SelectList(new string [] { 'A'.ToString(), 'B'.ToString(), 'C'.ToString(), 'D'.ToString() })"></select>
     <br />
-    <label asp-for="StartingDate"></label>
-    <input asp-for="StartingDate" type="date"/>
     <br />
-    <label asp-for="Salary"></label>
+    <label>Starting date</label>
+    <input asp-for="StartingDate" type="date" />
+    <br />
+    <br />
+    <label>Salary</label>
     <input asp-for="Salary" type="number" />
     <br />
-    <label asp-for="VacationDays"></label>
+    <br />
+    <label>Vacation days</label>
     <input asp-for="VacationDays" type="number" />
     <br />
-    <input type="submit" />
+    <br />
+    <input type="submit" value="Update" />
 </form>
-
-<p>Use this area to provide additional information.</p>
